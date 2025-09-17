@@ -1,0 +1,26 @@
+.rowContainer {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.rowContainer.selected {
+  border: 1px solid blue;
+  background-color: #e6f7ff;
+}
+
+.rowContainer.notSelected {
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+.label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.seatsContainer {
+  display: flex;
+  gap: 5px;
+}

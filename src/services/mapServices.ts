@@ -1,22 +1,25 @@
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 import { Seat, Row, SeatMap } from '@/types';
 
-export const createNewRows = (rowCount: number, seatsPerRow: number): Row[] => {
+export const createNewRows = (rowCount: number, seatsPerRow: number, section: string, color: string, startingIndex: number): Row[] => {
     const newRows: Row[] = [];
 
     for (let i = 0; i < rowCount; i++) {
+        const currentLabelIndex = startingIndex + i + 1;
         const seats: Seat[] = [];
         for (let j = 0; j < seatsPerRow; j++) {
             seats.push({
                 id: uuidv4(),
-                label: `A${j + 1}`,
+                label: `${String.fromCharCode(65 + startingIndex + i)}${j+1}`,
                 isSelected: false,
             });
         }
 
         newRows.push({
-            id: uuidv4(),
-            label: `Fila${i + 1}`,
+            id: uuidv4( ),
+            label: `Fila${currentLabelIndex}`,
+            section,
+            color,
             seats,
             isSelected: false,
         })

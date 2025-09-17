@@ -1,7 +1,7 @@
 'use client';
 
 import ControlsPanel from "@/components/ControlsPanel";
-import SeatMap from "@/components/SeatMap";
+import SeatMapComponent from "@/components/SeatMap";
 import { useSeatMap } from "@/hooks/useSeatMap";
 
 export default function Home() {
@@ -22,11 +22,11 @@ export default function Home() {
       <ControlsPanel
         onCreateRows={handleCreateRows}
         onDeleteRows={handleDeleteSelected}
-        onHandleDeleteSeat={handleDeleteSeat}
+        onDeleteSeat={handleDeleteSeat}
         onBatchLabelingRows={handleBatchLabelingRows}
         onBatchLabelingSeats={handleBatchLabelingSeats}
        />
-       <SeatMap
+       <SeatMapComponent
         seatMap={seatMap}
         onToggleRow={handleToggleRow}
         onToggleSeat={handleToggleSeat}

@@ -7,6 +7,8 @@ export interface Seat{
 export interface Row {
     id: string;
     label: string;
+    section: string;
+    color:string;
     seats: Seat[];
     isSelected: boolean;
 }

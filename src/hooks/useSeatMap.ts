@@ -13,8 +13,9 @@ import {
 export const useSeatMap = ()=>{
     const [seatMap, setSeatMap] = useState<SeatMap>({rows: []});
 
-    const handleCreateRows =(rowCount: number, seatsPerRow: number)=>{
-        const newRows = createNewRows(rowCount, seatsPerRow);
+    const handleCreateRows =(rowCount: number, seatsPerRow: number, section: string, color: string)=>{
+        const startingIndex = seatMap.rows.length;
+        const newRows = createNewRows(rowCount, seatsPerRow, section, color, startingIndex);
         setSeatMap((prevMap)=>({
             ...prevMap,
             rows:[...prevMap.rows, ...newRows],

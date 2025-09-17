@@ -1,0 +1,23 @@
+.seat {
+    width: 30px;
+    height: 30px;
+    /* Cambia de 5px a 50% para que sea un círculo */
+    border-radius: 50%;
+    /* ... el resto de los estilos se mantienen igual ... */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.seat.selected {
+  border: 1px solid green;
+  background-color: #d9f7be;
+}
+
+.seat.notSelected {
+    /* Use the custom property for the background color */
+    border: 1px solid var(--row-color, #999);
+    background-color: var(--row-color, #f0f0f0);
+}
