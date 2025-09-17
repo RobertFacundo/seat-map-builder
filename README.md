@@ -10,6 +10,6 @@
    - toggleRowSelection
    - toggleSeatSelection
    - deleteSeat
-- Una vez teniendo las funcionalidades, la logica continuaba con crear los componentes a utilizar... SeatMap (conteniendo los subcomponentes de rows y seat) y ControlsPanel(conteniendo lo subcomponentes de formulario y sus buttons)
+- Una vez teniendo las funcionalidades, lo logico era crear los componentes a utilizar... SeatMap (conteniendo los subcomponentes de rows y seat) y ControlsPanel(conteniendo lo subcomponentes de formulario y sus buttons)
 - Al diseñar y crear los componentes principales, se refactorizó el panel de control para que unicamente tenga el formulario de creado de filas y su etiquetado.
-- Luego se pudo avanzar al renderizado de las filas y los asientos, con sus consecuentes mejoras
+- Luego se pudo avanzar al renderizado de las filas y los asientos, con sus consecuentes mejoras.

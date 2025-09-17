@@ -1,4 +1,4 @@
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import { Seat, Row, SeatMap } from '@/types';
 
 export const createNewRows = (rowCount: number, seatsPerRow: number, section: string, color: string, startingIndex: number): Row[] => {
@@ -10,14 +10,14 @@ export const createNewRows = (rowCount: number, seatsPerRow: number, section: st
         for (let j = 0; j < seatsPerRow; j++) {
             seats.push({
                 id: uuidv4(),
-                label: `${String.fromCharCode(65 + startingIndex + i)}${j+1}`,
+                label: `${String.fromCharCode(65 + startingIndex + i)}${j + 1}`,
                 isSelected: false,
             });
         }
 
         newRows.push({
-            id: uuidv4( ),
-            label: `Fila${currentLabelIndex}`,
+            id: uuidv4(),
+            label: `${currentLabelIndex}`,
             section,
             color,
             seats,
@@ -29,8 +29,12 @@ export const createNewRows = (rowCount: number, seatsPerRow: number, section: st
 
 export const deleteSelectedRows = (map: SeatMap): SeatMap => {
     const updatedRows = map.rows.filter((row) => !row.isSelected);
+    const reLabeledRows = updatedRows.map((row, index) => ({
+        ...row,
+        label: `${index + 1}`
+    }))
 
-    return { ...map, rows: updatedRows };
+    return { ...map, rows: reLabeledRows };
 };
 
 export const toggleRowSelection = (map: SeatMap, rowId: string): SeatMap => {
@@ -46,73 +50,42 @@ export const toggleSeatSelection = (
     seatId: string
 ): SeatMap => {
     const updatedRows = map.rows.map((row) => {
-        if (row.id === rowId) {
-            const updatedSeats = row.seats.map((seat) =>
-                seat.id === seatId ? { ...seat, isSelected: !seat.isSelected } : seat
-            );
-            return { ...row, seats: updatedSeats };
-        }
+        const isTargetRow = row.id === rowId;
+        const targetSeat = row.seats.find(s => s.id === seatId);
+        const wasSelected = isTargetRow && targetSeat?.isSelected;
 
-        return row;
+        const updatedSeats = row.seats.map((seat) => {
+            if (seat.id === seatId && wasSelected) {
+                return { ...seat, isSelected: false };
+            }
+
+            return {
+                ...seat,
+                isSelected: seat.id === seatId,
+            };
+        });
+        return { ...row, seats: updatedSeats };
     });
     return { ...map, rows: updatedRows };
 };
 
 export const deleteSeat = (map: SeatMap, rowId: string, seatId: string): SeatMap => {
-    const updatedRows = map.rows.map((row)=>{
-        if(row.id === rowId){
-            const updatedSeats = row.seats.filter((seat)=> seat.id !== seatId);
+    const updatedRows = map.rows.map((row) => {
+        if (row.id === rowId) {
+            const remainingSeats = row.seats.filter((seat) => seat.id !== seatId);
+            
+            const reLabeledSeats = remainingSeats.map((seat, index)=>({
+                ...seat,
+                label: `${String.fromCharCode(65 + index)}${index + 1}`
+            }))
 
-            return {...row, seats: updatedSeats};
+            return { ...row, seats: reLabeledSeats };
         }
         return row;
     });
 
-    return {...map, rows: updatedRows};
-}
-
-export const deleteSelectedSeats = (map: SeatMap): SeatMap =>{
-    const updatedRows = map.rows.map((row)=>{
-        const updatedSeats = row.seats.filter((seat)=> !seat.isSelected);
-        return {...row, seats: updatedSeats};
-    });
-
-    return {...map, rows: updatedRows}
+    return { ...map, rows: updatedRows };
 }
 
 
-export const applyBatchLabelingToRows = (
-    map: SeatMap,
-    baseLabel: string,
-    start: number
-): SeatMap =>{
-    let counter = start;
-    const updatedRows = map.rows.map((row)=>{
-        if(row.isSelected){
-            const newLabel = `${baseLabel} ${counter++}`;
-            return {...row, label: newLabel};
-        }
-        return row
-    });
 
-    return{...map, rows: updatedRows};
-};
-
-export const applyBatchLabelingToSeats = (
-    map: SeatMap,
-    baseLabel: string,
-    start: number
-): SeatMap =>{
-    let counter = start;
-    const updatedRows = map.rows.map((row)=>{
-        const updatedSeats = row.seats.map((seat)=>{
-            if(seat.isSelected){
-                const newLabel = `${baseLabel} ${counter++}`;
-                return {...seat, label: newLabel};
-            }
-            return seat;
-        });
-        return {...row, seats: updatedSeats}
-    });
-    return {...map, rows: updatedRows};
-}

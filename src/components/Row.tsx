@@ -17,7 +17,8 @@ const RowComponent = ({ row, onToggleRow, onToggleSeat }: RowProps) => {
                 {row.seats.map((seat) => (
                     <SeatComponent
                         key={seat.id}
-                        rowId={row.label}
+                        rowId={row.id}
+                        rowLabel={row.label}
                         seat={seat}
                         onToggleSeat={onToggleSeat}
                         rowColor={row.color}

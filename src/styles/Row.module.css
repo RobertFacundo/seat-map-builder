@@ -3,6 +3,12 @@
   align-items: center;
   padding: 10px;
   cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.rowContainer:hover {
+  background-color: #f0f8ff; /* A lighter shade of blue */
+  border-color: #a0c4ff; /* A slightly darker blue border on hover */
 }
 
 .rowContainer.selected {

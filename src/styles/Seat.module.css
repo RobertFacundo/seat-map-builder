@@ -9,8 +9,16 @@
     align-items: center;
     cursor: pointer;
     font-size: 12px;
+     transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
+.seat:hover,
+.seat.selected {
+  transform: scale(1.1); /* Escala */
+  filter: brightness(0.9); /* Oscurece */
+}
+
+/* El resto de los estilos se mantienen para los colores y bordes */
 .seat.selected {
   border: 1px solid green;
   background-color: #d9f7be;
