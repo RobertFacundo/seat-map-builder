@@ -68,6 +68,15 @@ export const deleteSeat = (map: SeatMap, rowId: string, seatId: string): SeatMap
     return {...map, rows: updatedRows};
 }
 
+export const deleteSelectedSeats = (map: SeatMap): SeatMap =>{
+    const updatedRows = map.rows.map((row)=>{
+        const updatedSeats = row.seats.filter((seat)=> !seat.isSelected);
+        return {...row, seats: updatedSeats};
+    });
+
+    return {...map, rows: updatedRows}
+}
+
 
 export const applyBatchLabelingToRows = (
     map: SeatMap,
