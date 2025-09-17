@@ -13,3 +13,4 @@
    - deleteSeat
    - applyBatchLabelingToRows
    - applyBatchLabelingToSeats
+- Una vez teniendo las funcionalidades, la logica continuaba con crear los componentes a utilizar... SeatMap (conteniendo los subcomponentes de rows y seat) y ControlsPanel(conteniendo lo subcomponentes de formulario y sus buttons)
