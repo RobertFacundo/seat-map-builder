@@ -1,0 +1,70 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formContainer h3 {
+  margin: 0;
+  color: #555;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+.colorInput {
+  height: 40px;
+  width: 100%;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.colorInput::-webkit-color-swatch {
+  border: 2px solid #ddd;
+}
+
+.colorInput::-moz-color-swatch {
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+.createButton {
+  padding: 12px 20px;
+  background-color: #38a169;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.createButton:hover {
+  background-color: #2f855a;
+}

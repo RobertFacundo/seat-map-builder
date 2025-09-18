@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState} from "react";
 import { SeatMap } from "@/types";
+import { DragEndEvent } from "@dnd-kit/core";
 import {
     createNewRows,
     deleteSelectedRows,
@@ -10,7 +11,8 @@ import {
 
 export const useSeatMap = () => {
     const [seatMap, setSeatMap] = useState<SeatMap>({ rows: [] });
-    const [selectedSeat, setSelectedSeat] = useState<{ rowId: string, seatId: string } | null>(null)
+    const [selectedSeat, setSelectedSeat] = useState<{ rowId: string, seatId: string } | null>(null);
+    const [isDragging, setIsDragging] = useState(false);
 
     const handleCreateRows = (rowCount: number, seatsPerRow: number, section: string, color: string) => {
         const startingIndex = seatMap.rows.length;
@@ -61,6 +63,31 @@ export const useSeatMap = () => {
         }
     };
 
+    const handleDragStart = ()=>{
+        setIsDragging(true)
+    }
+
+    const handleDragEnd = (event: DragEndEvent)=>{
+        const {active, delta} = event;
+        const rowId = active.id as string;
+        const dx = delta.x;
+        const dy = delta.y;
+
+        const updatedRows = seatMap.rows.map(row =>{
+            if(row.id === rowId){
+                return {
+                    ...row,
+                    x: row.x + dx,
+                    y: row.y + dy,
+                };
+            }
+
+            return row;
+        });
+
+        setSeatMap({...seatMap, rows: updatedRows});
+    }
+
     return {
         seatMap,
         handleCreateRows,
@@ -68,5 +95,8 @@ export const useSeatMap = () => {
         handleDeleteSeat,
         handleToggleRow,
         handleToggleSeat,
+        handleDragEnd,
+        handleDragStart,
+        isDragging
     }
 }

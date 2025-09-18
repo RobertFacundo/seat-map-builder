@@ -1,9 +1,7 @@
 .seat {
-    width: 30px;
-    height: 30px;
-    /* Cambia de 5px a 50% para que sea un círculo */
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
-    /* ... el resto de los estilos se mantienen igual ... */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,18 +12,16 @@
 
 .seat:hover,
 .seat.selected {
-  transform: scale(1.1); /* Escala */
-  filter: brightness(0.9); /* Oscurece */
+  transform: scale(1.1); 
+  filter: brightness(0.9); 
 }
 
-/* El resto de los estilos se mantienen para los colores y bordes */
 .seat.selected {
   border: 1px solid green;
   background-color: #d9f7be;
 }
 
 .seat.notSelected {
-    /* Use the custom property for the background color */
     border: 1px solid var(--row-color, #999);
     background-color: var(--row-color, #f0f0f0);
 }

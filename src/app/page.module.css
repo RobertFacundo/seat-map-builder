@@ -5,7 +5,18 @@
 }
 
 .seatMapWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
   flex-grow: 1; 
   padding: 20px;
+  overflow: auto; 
+}
+
+.controlsPanel{
+  width: 30%;
+  padding: 20px;
+  background-color: #f0f0f0; 
+  border-right: 1px solid #ccc;
   overflow: auto; 
 }

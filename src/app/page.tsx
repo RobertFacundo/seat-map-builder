@@ -13,22 +13,28 @@ export default function Home() {
     handleDeleteSeat,
     handleToggleRow,
     handleToggleSeat,
+    handleDragEnd,
+    // handleDragStart,
+    // isDragging
   } = useSeatMap();
 
   return (
     <div className={styles.mainContainer}>
-      <h1>Seat Map Builder</h1>
-      <ControlsPanel
-        onCreateRows={handleCreateRows}
-        onDeleteRows={handleDeleteSelected}
-        onDeleteSeat={handleDeleteSeat}
-       />
+     <div className={styles.controlsPanel}>
+       <ControlsPanel
+         onCreateRows={handleCreateRows}
+         onDeleteRows={handleDeleteSelected}
+         onDeleteSeat={handleDeleteSeat}
+        />
+     </div>
       <div className={styles.seatMapWrapper}>
-         <SeatMapComponent
-          seatMap={seatMap}
-          onToggleRow={handleToggleRow}
-          onToggleSeat={handleToggleSeat}
-         />
+        <h1>Seat Map Builder</h1> 
+          <SeatMapComponent
+           seatMap={seatMap}
+           onToggleRow={handleToggleRow}
+           onToggleSeat={handleToggleSeat}
+           handleDragEnd={handleDragEnd}
+          />
       </div>
     </div>
   );

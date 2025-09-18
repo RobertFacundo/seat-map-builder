@@ -22,6 +22,8 @@ export const createNewRows = (rowCount: number, seatsPerRow: number, section: st
             color,
             seats,
             isSelected: false,
+            x:0,
+            y:0,
         })
     }
     return newRows;

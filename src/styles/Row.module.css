@@ -1,14 +1,14 @@
 .rowContainer {
-  display: flex;
+  display: flex; 
   align-items: center;
   padding: 10px;
-  cursor: pointer;
+  padding-left: 0.2rem;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .rowContainer:hover {
-  background-color: #f0f8ff; /* A lighter shade of blue */
-  border-color: #a0c4ff; /* A slightly darker blue border on hover */
+  background-color: #f0f8ff; 
+  border-color: #a0c4ff; 
 }
 
 .rowContainer.selected {
@@ -29,4 +29,11 @@
 .seatsContainer {
   display: flex;
   gap: 5px;
+}
+
+.dragAndDropHandle {
+  padding-right: 0.2rem;
+  cursor: grab; 
+  font-size: 1.5rem; 
+  color: #777;
 }

@@ -11,6 +11,8 @@ export interface Row {
     color:string;
     seats: Seat[];
     isSelected: boolean;
+    x: number;
+    y: number;
 }
 
 export interface SeatMap {
