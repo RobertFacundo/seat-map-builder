@@ -10,6 +10,8 @@
   border: none;
   cursor: pointer;
   display: block;
+  font-family: var(--font-rokkit);
+  font-size: 0.8rem;
 }
 
 .btn-base:hover {

@@ -11,7 +11,7 @@ const CreateRowsForm = ({ onCreateRows }: CreateRowsFormProps) => {
 
     return (
         <form onSubmit={(e) => handleSubmit(e, onCreateRows)} className={styles.formContainer}>
-            <h2>Crear Filas y Asientos</h2>
+            <h2 className={styles.title}>Crear Filas y Asientos</h2>
             <div className={styles.inputGroup}>
                 <input
                     type="number"

@@ -107,9 +107,8 @@ export const useSeatMap = () => {
         setSeatMap(rotateSelectedRows(seatMap, newRotation))
     };
 
-    const handleBatchLabeling = (baseLabel: string, start: number)=>{
-        const randomColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
-        setSeatMap(batchLabelSelectedRows(seatMap, baseLabel, start, randomColor))
+    const handleBatchLabeling = (baseLabel: string, start: number, newColor: string)=>{
+        setSeatMap(batchLabelSelectedRows(seatMap, baseLabel, start, newColor))
     };
 
     const handleNewMap = ()=>{

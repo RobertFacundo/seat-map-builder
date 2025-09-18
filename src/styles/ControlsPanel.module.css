@@ -1,12 +1,12 @@
 /* Paleta de colores */
 :root {
-  --color-primary: #82db34;      /* Azul para acciones principales */
-  --color-success: #2ecc71;      /* Verde para confirmaciones */
-  --color-warning: #f39c12;      /* Naranja para advertencias */
-  --color-danger: #e74c3c;       /* Rojo para acciones de peligro */
+  --color-primary: #82db34;     
+  --color-success: #2ecc71;     
+  --color-warning: #f39c12;    
+  --color-danger: #e74c3c;      
   --color-text-dark: #333;
-  --color-text-light: #fff;
-  --color-bg-light: #f7f9fc;
+  --color-text-light: #ffffff4b;
+  --color-bg-light: #f7f9fccc;
   --color-border: #e0e4eb;
   --color-border-input: #ccc;
 }
@@ -26,7 +26,12 @@
   color: var(--color-text-dark);
   font-size: 1.5rem;
   font-weight: 600;
-  border-bottom: 2px solid var(--color-border);
+  border-bottom: 1px solid var(--color-text-dark);
   padding-bottom: 0px;
+}
+
+.separator {
+  border: none;
+  border-top: 2px solid var(--color-text-dark); 
 }
 

@@ -7,7 +7,7 @@
     align-items: center;
     cursor: pointer;
     font-size: 12px;
-     transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+     transition: transform 0.8s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .seat:hover,
@@ -17,8 +17,8 @@
 }
 
 .seat.selected {
-  border: 1px solid green;
-  background-color: #d9f7be;
+  border: 1px solid #F09819;
+  background-color: #edde5d66;
 }
 
 .seat.notSelected {

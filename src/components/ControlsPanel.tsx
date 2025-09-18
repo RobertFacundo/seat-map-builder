@@ -4,10 +4,8 @@ import RowRotation from "./RowRotation";
 import BatchLabelingForm from "./BatchLabelingForm";
 import styles from '@/styles/ControlsPanel.module.css'
 import buttonStyles from '@/styles/Buttons.module.css'
-import { SeatMap } from "@/types";
 
 interface ControlsPanelProps {
-    // onCreateRows: (rowCount: number, seatsPerRow: number, section: string, color: string) => void;
     onCreateRows: (rowCount: number, seatsPerRow: number, section:string, color: string) => void;
     onDeleteRows: () => void;
     onDeleteSeat: () => void;
@@ -28,16 +26,16 @@ const ControlsPanel = ({
     return (
         <div className={styles.controlsContainer}>
             <CreateRowsForm onCreateRows={onCreateRows} />
-            <hr />
+            <hr/>
             <RowActions onDeleteRows={onDeleteRows} onDeleteSeat={onDeleteSeat} />
             <hr />
             <RowRotation onRotateRows={onRotateRows} />
-            <hr />
             <BatchLabelingForm
                 onSubmit={onBatchLabelingRows}
                 title="Etiquetado rápido de filas"
                 labelPlaceholder="Etiqueta Base (ej. Platea 1..N, A1..A10).)"
             />
+            <hr  className={styles.separator}/>
             <button onClick={onNewMap} className={`${buttonStyles['btn-base']} ${buttonStyles['btn-primary-grad']}`}>
                 Nuevo Mapa
             </button>

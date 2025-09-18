@@ -29,7 +29,6 @@
 
 .rotateControl button {
   background-color: var(--color-primary);
-  color: var(--color-text-light);
   padding: 10px 15px;
   border: none;
   border-radius: 5px;

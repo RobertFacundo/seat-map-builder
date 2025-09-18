@@ -3,13 +3,13 @@ import styles from '@/styles/BatchLabelingForm.module.css';
 import buttonStyles from '@/styles/Buttons.module.css'
 
 interface BatchLabelingFormProps {
-    onSubmit: (baseLabel: string, start: number) => void;
+    onSubmit: (baseLabel: string, start: number, color:string) => void;
     title: string;
     labelPlaceholder: string;
 }
 
 const BatchLabelingForm = ({ onSubmit, title, labelPlaceholder }: BatchLabelingFormProps) => {
-    const { baseLabel, setBaseLabel, batchStart, setBatchStart, handleSubmit } = useBatchLabelingForm();
+    const { baseLabel, setBaseLabel, batchStart, setBatchStart,color, setColor, handleSubmit } = useBatchLabelingForm();
 
     return (
         <form onSubmit={(e) => handleSubmit(e, onSubmit)} className={styles.batchLabelingForm}>
@@ -27,6 +27,13 @@ const BatchLabelingForm = ({ onSubmit, title, labelPlaceholder }: BatchLabelingF
                     onChange={(e) => setBatchStart(Number(e.target.value))}
                     placeholder='Inicio (ej. 1)'
                     className={styles.input}
+                />
+                <input
+                    type="color"
+                    value={color}
+                    onChange={(e) => setColor(e.target.value)}
+                    placeholder="Seleccionar Color"
+                    className={styles.colorInput}
                 />
             </div>
             <button type="submit" className={`${buttonStyles['btn-base']} ${buttonStyles['btn-primary-grad']}`}>Aplicar</button>
