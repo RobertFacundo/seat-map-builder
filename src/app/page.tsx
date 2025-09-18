@@ -15,18 +15,20 @@ export default function Home() {
     handleToggleSeat,
     handleDragEnd,
     handleRotateSelected,
-    handleBatchLabeling
+    handleBatchLabeling,
+    handleNewMap
   } = useSeatMap();
 
   return (
     <div className={styles.mainContainer}>
       <div className={styles.controlsPanel}>
         <ControlsPanel
-          onBatchLabelingRows={handleBatchLabeling}
           onCreateRows={handleCreateRows}
+          onBatchLabelingRows={handleBatchLabeling}
           onDeleteRows={handleDeleteSelected}
           onDeleteSeat={handleDeleteSeat}
           onRotateRows={handleRotateSelected}
+          onNewMap={handleNewMap}
         />
       </div>
       <div className={styles.seatMapWrapper}>

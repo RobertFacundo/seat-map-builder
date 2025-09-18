@@ -1,8 +1,16 @@
 import { v4 as uuidv4 } from 'uuid';
 import { Seat, Row, SeatMap } from '@/types';
 
-export const createNewRows = (rowCount: number, seatsPerRow: number, section: string, color: string, startingIndex: number): Row[] => {
+export const createNewRows = (
+    rowCount: number,
+    seatsPerRow: number,
+    section: string,
+    color: string,
+    startingIndex: number,
+    startY: number
+): Row[] => {
     const newRows: Row[] = [];
+    const ROW_HEIGHT = 50;
 
     for (let i = 0; i < rowCount; i++) {
         const currentLabelIndex = startingIndex + i + 1;
@@ -22,9 +30,9 @@ export const createNewRows = (rowCount: number, seatsPerRow: number, section: st
             color,
             seats,
             isSelected: false,
-            x:0,
-            y:0,
-            rotation:0,
+            x: 50,
+            y: startY + (i * ROW_HEIGHT),
+            rotation: 0,
         })
     }
     return newRows;
@@ -76,8 +84,8 @@ export const deleteSeat = (map: SeatMap, rowId: string, seatId: string): SeatMap
     const updatedRows = map.rows.map((row) => {
         if (row.id === rowId) {
             const remainingSeats = row.seats.filter((seat) => seat.id !== seatId);
-            
-            const reLabeledSeats = remainingSeats.map((seat, index)=>({
+
+            const reLabeledSeats = remainingSeats.map((seat, index) => ({
                 ...seat,
                 label: `${String.fromCharCode(65 + index)}${index + 1}`
             }))
@@ -91,8 +99,8 @@ export const deleteSeat = (map: SeatMap, rowId: string, seatId: string): SeatMap
 }
 
 export const rotateSelectedRows = (map: SeatMap, newRotation: number): SeatMap => {
-    const updatedRows = map.rows.map(row=>{
-        if(row.isSelected){
+    const updatedRows = map.rows.map(row => {
+        if (row.isSelected) {
             return {
                 ...row,
                 rotation: newRotation,
@@ -101,26 +109,26 @@ export const rotateSelectedRows = (map: SeatMap, newRotation: number): SeatMap =
         return row;
     });
 
-    return {...map, rows: updatedRows}
+    return { ...map, rows: updatedRows }
 }
 
-export const batchLabelSelectedRows = (map: SeatMap, baseLabel: string, startingIndex: number, newColor:string | null): SeatMap=>{
+export const batchLabelSelectedRows = (map: SeatMap, baseLabel: string, startingIndex: number, newColor: string | null): SeatMap => {
     let currentLabelIndex = startingIndex - 1;
 
-    const updatedRows = map.rows.map(row=>{
-        if(row.isSelected){
+    const updatedRows = map.rows.map(row => {
+        if (row.isSelected) {
             currentLabelIndex++;
-            return{
+            return {
                 ...row,
                 label: `${currentLabelIndex}`,
                 section: baseLabel,
-                color:newColor !== null ? newColor : row.color,
-                isSelected:false,
+                color: newColor !== null ? newColor : row.color,
+                isSelected: false,
             };
         }
         return row;
     });
-    return {...map, rows: updatedRows};
+    return { ...map, rows: updatedRows };
 };
 
 

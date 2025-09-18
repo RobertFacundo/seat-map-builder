@@ -1,0 +1,45 @@
+.rotateControl {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.rotateControl label {
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.rotateControl input[type="number"] {
+  width: 80px;
+  padding: 8px;
+  border: 1px solid var(--color-border-input);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.rotateControl input[type="number"]:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+}
+
+.rotateControl button {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.rotateControl button:hover {
+  background-color: #29b96a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

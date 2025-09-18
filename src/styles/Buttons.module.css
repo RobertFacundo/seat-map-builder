@@ -1,0 +1,27 @@
+.btn-base {
+  padding: 10px 43px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+
+.btn-base:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-primary-grad {
+  background-image: linear-gradient(to right, #F09819 0%, #EDDE5D 51%, #F09819 100%);
+}
+
+.btn-delete-grad {
+  background-image: linear-gradient(to right, #c21500 0%, #ffc500 51%, #c21500 100%);
+}

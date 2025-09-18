@@ -1,4 +1,5 @@
-import styles from '@/styles/ControlsPanel.module.css';
+import buttonStyles from '@/styles/Buttons.module.css';
+import styles from '@/styles/RowActions.module.css'
 
 interface RowActionsProps {
     onDeleteRows: () => void;
@@ -8,8 +9,18 @@ interface RowActionsProps {
 const RowActions = ({ onDeleteRows, onDeleteSeat }: RowActionsProps) => {
     return (
         <div className={styles.buttonGroup}>
-            <button onClick={onDeleteRows} className={`${styles.button} ${styles.deleteButton}`}>Eliminar Filas seleccionadas</button>
-            <button onClick={onDeleteSeat} className={`${styles.button} ${styles.deleteButton}`}>Eliminar asiento seleccionado</button>
+            <button
+                onClick={onDeleteRows}
+                className={`${buttonStyles['btn-base']} ${buttonStyles['btn-delete-grad']}`}
+            >
+                Eliminar Filas seleccionadas
+            </button>
+            <button
+                onClick={onDeleteSeat}
+                className={`${buttonStyles['btn-base']} ${buttonStyles['btn-delete-grad']}`}
+            >
+                Eliminar asiento seleccionado
+            </button>
         </div>
     )
 }

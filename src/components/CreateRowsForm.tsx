@@ -1,5 +1,6 @@
 import { useCreateRowsForm } from "@/hooks/useCreateRowsForm";
-import styles from '@/styles/CreateRowsForm.module.css'
+import styles from '@/styles/CreateRowsForm.module.css';
+import buttonStyles from '@/styles/Buttons.module.css'
 
 interface CreateRowsFormProps {
     onCreateRows: (rowCount: number, seatPerRow: number, section: string, color: string) => void;
@@ -40,7 +41,7 @@ const CreateRowsForm = ({ onCreateRows }: CreateRowsFormProps) => {
                     className={styles.colorInput}
                 />
             </div>
-            <button type="submit" className={styles.createButton}>Crear</button>
+            <button type="submit" className={`${buttonStyles['btn-base']} ${buttonStyles['btn-primary-grad']}`}>Crear</button>
         </form>
     );
 };

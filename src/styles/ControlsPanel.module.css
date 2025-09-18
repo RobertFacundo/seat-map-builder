@@ -1,93 +1,32 @@
+/* Paleta de colores */
+:root {
+  --color-primary: #82db34;      /* Azul para acciones principales */
+  --color-success: #2ecc71;      /* Verde para confirmaciones */
+  --color-warning: #f39c12;      /* Naranja para advertencias */
+  --color-danger: #e74c3c;       /* Rojo para acciones de peligro */
+  --color-text-dark: #333;
+  --color-text-light: #fff;
+  --color-bg-light: #f7f9fc;
+  --color-border: #e0e4eb;
+  --color-border-input: #ccc;
+}
+
 .controlsContainer {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 24px;
-  background-color: #f7f9fc;
+  padding: 22px;
+  background-color: var(--color-bg-light);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .controlsContainer h2 {
   margin: 0 0 16px;
-  color: #333;
+  color: var(--color-text-dark);
   font-size: 1.5rem;
   font-weight: 600;
-  border-bottom: 2px solid #e0e4eb;
-  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0px;
 }
 
-.buttonGroup {
-  display: flex;
-  flex-direction: row;
-  gap: 4px;
-}
-
-.button {
-  padding: 12px 2px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  border: none;
-  border-radius: 6px;
-  transition: all 0.2s ease-in-out;
-}
-
-.button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.deleteButton {
-  background-color: #09570e;
-  color: #fff;
-}
-
-.deleteButton:hover {
- background-color: #167c1d;
-}
-
-.rotateControl {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 10px;
-  align-items: flex-start;
-  padding: 10px;
-  border: 1px solid #eee;
-  border-radius: 8px;
-}
-
-.rotateControl label {
-  font-weight: 600;
-  color: #333;
-}
-
-.rotateControl input[type="number"] {
-  width: 80px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.rotateControl input[type="number"]:focus {
-  outline: none;
-  border-color: #050709;
-  box-shadow: 0 0 0 3px rgba(5, 7, 8, 0.5);
-}
-
-.rotateControl button {
-   background-color: #1d9525;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
-}
-
-.rotateControl button:hover {
-  background-color: #167c1d;
-}
