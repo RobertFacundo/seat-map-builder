@@ -19,12 +19,12 @@
 
 .buttonGroup {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-direction: row;
+  gap: 4px;
 }
 
 .button {
-  padding: 12px 20px;
+  padding: 12px 2px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
@@ -39,10 +39,55 @@
 }
 
 .deleteButton {
-  background-color: #e53e3e;
+  background-color: #09570e;
   color: #fff;
 }
 
 .deleteButton:hover {
-  background-color: #c53030;
+ background-color: #167c1d;
+}
+
+.rotateControl {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.rotateControl label {
+  font-weight: 600;
+  color: #333;
+}
+
+.rotateControl input[type="number"] {
+  width: 80px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.rotateControl input[type="number"]:focus {
+  outline: none;
+  border-color: #050709;
+  box-shadow: 0 0 0 3px rgba(5, 7, 8, 0.5);
+}
+
+.rotateControl button {
+   background-color: #1d9525;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.rotateControl button:hover {
+  background-color: #167c1d;
 }

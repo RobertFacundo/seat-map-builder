@@ -7,12 +7,13 @@ import {
     deleteSeat,
     toggleRowSelection,
     toggleSeatSelection,
+    rotateSelectedRows,
+    batchLabelSelectedRows
 } from '@/services/mapServices';
 
 export const useSeatMap = () => {
     const [seatMap, setSeatMap] = useState<SeatMap>({ rows: [] });
     const [selectedSeat, setSelectedSeat] = useState<{ rowId: string, seatId: string } | null>(null);
-    const [isDragging, setIsDragging] = useState(false);
 
     const handleCreateRows = (rowCount: number, seatsPerRow: number, section: string, color: string) => {
         const startingIndex = seatMap.rows.length;
@@ -63,10 +64,6 @@ export const useSeatMap = () => {
         }
     };
 
-    const handleDragStart = ()=>{
-        setIsDragging(true)
-    }
-
     const handleDragEnd = (event: DragEndEvent)=>{
         const {active, delta} = event;
         const rowId = active.id as string;
@@ -88,6 +85,17 @@ export const useSeatMap = () => {
         setSeatMap({...seatMap, rows: updatedRows});
     }
 
+
+    const handleRotateSelected = (newRotation: number)=>{
+        setSeatMap(rotateSelectedRows(seatMap, newRotation))
+    };
+
+    const handleBatchLabeling = (baseLabel: string, start: number)=>{
+        const randomColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+        setSeatMap(batchLabelSelectedRows(seatMap, baseLabel, start, randomColor))
+    }
+
+
     return {
         seatMap,
         handleCreateRows,
@@ -96,7 +104,7 @@ export const useSeatMap = () => {
         handleToggleRow,
         handleToggleSeat,
         handleDragEnd,
-        handleDragStart,
-        isDragging
+        handleRotateSelected,
+        handleBatchLabeling
     }
 }

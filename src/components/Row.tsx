@@ -16,7 +16,7 @@ const RowComponent = ({ row, onToggleRow, onToggleSeat }: RowProps) => {
     })
 
     const style = {
-        transform: transform ? `translate3d(${transform.x}px, ${transform.y}px, 0)` : undefined,
+        transform: transform ? `translate3d(${transform.x}px, ${transform.y}px, 0) rotate(${row.rotation}deg)` : `rotate(${row.rotation}deg)`,
         left: `${row.x}px`,
         top: `${row.y}px`,
         position: 'absolute'
@@ -25,7 +25,6 @@ const RowComponent = ({ row, onToggleRow, onToggleSeat }: RowProps) => {
 
     return (
         <div
-            ref={setNodeRef}
             style={{ ...style, position: 'absolute', top: row.y, left: row.x }}
             onClick={() => onToggleRow(row.id)}
             className={rowClass}
@@ -46,12 +45,9 @@ const RowComponent = ({ row, onToggleRow, onToggleSeat }: RowProps) => {
                 {row.seats.map((seat) => (
                     <SeatComponent
                         key={seat.id}
-                        rowId={row.id}
-                        rowLabel={row.label}
+                        row={row}
                         seat={seat}
                         onToggleSeat={onToggleSeat}
-                        rowColor={row.color}
-                        rowSection={row.section}
                     />
                 ))}
             </div>

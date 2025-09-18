@@ -24,6 +24,7 @@ export const createNewRows = (rowCount: number, seatsPerRow: number, section: st
             isSelected: false,
             x:0,
             y:0,
+            rotation:0,
         })
     }
     return newRows;
@@ -88,6 +89,39 @@ export const deleteSeat = (map: SeatMap, rowId: string, seatId: string): SeatMap
 
     return { ...map, rows: updatedRows };
 }
+
+export const rotateSelectedRows = (map: SeatMap, newRotation: number): SeatMap => {
+    const updatedRows = map.rows.map(row=>{
+        if(row.isSelected){
+            return {
+                ...row,
+                rotation: newRotation,
+            };
+        }
+        return row;
+    });
+
+    return {...map, rows: updatedRows}
+}
+
+export const batchLabelSelectedRows = (map: SeatMap, baseLabel: string, startingIndex: number, newColor:string | null): SeatMap=>{
+    let currentLabelIndex = startingIndex - 1;
+
+    const updatedRows = map.rows.map(row=>{
+        if(row.isSelected){
+            currentLabelIndex++;
+            return{
+                ...row,
+                label: `${currentLabelIndex}`,
+                section: baseLabel,
+                color:newColor !== null ? newColor : row.color,
+                isSelected:false,
+            };
+        }
+        return row;
+    });
+    return {...map, rows: updatedRows};
+};
 
 
 

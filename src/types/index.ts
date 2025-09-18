@@ -13,6 +13,7 @@ export interface Row {
     isSelected: boolean;
     x: number;
     y: number;
+    rotation: number;
 }
 
 export interface SeatMap {

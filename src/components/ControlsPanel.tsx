@@ -1,28 +1,38 @@
 import CreateRowsForm from "./CreateRowsForm";
+import RowActions from './RowActions'
+import RowRotation from "./RowRotation";
 import BatchLabelingForm from "./BatchLabelingForm";
 import styles from '@/styles/ControlsPanel.module.css'
+import { useState } from "react";
 
 interface ControlsPanelProps {
     onCreateRows: (rowCount: number, seatsPerRow: number, section: string, color: string) => void;
     onDeleteRows: () => void;
-    onDeleteSeat: ()=> void;
+    onDeleteSeat: () => void;
+    onRotateRows: (rotation: number) => void;
+    onBatchLabelingRows: (baseLabel: string, start: number) => void;
 }
 
 const ControlsPanel = ({
     onCreateRows,
     onDeleteRows,
     onDeleteSeat,
+    onRotateRows,
+    onBatchLabelingRows
 }: ControlsPanelProps) => {
     return (
         <div className={styles.controlsContainer}>
-            <h2>Controles</h2>
             <CreateRowsForm onCreateRows={onCreateRows} />
             <hr />
-            <div className={styles.buttonGroup}>
-                <button onClick={onDeleteRows} className={`${styles.button} ${styles.deleteButton}`}>Eliminar Filas seleccionadas</button>
-                <button onClick={onDeleteSeat} className={`${styles.button} ${styles.deleteButton}`}>Eliminar asiento seleccionado</button>
-            </div>
+            <RowActions onDeleteRows={onDeleteRows} onDeleteSeat={onDeleteSeat} />
             <hr />
+            <RowRotation onRotateRows={onRotateRows} />
+            <hr />
+            <BatchLabelingForm
+                onSubmit={onBatchLabelingRows}
+                title="Etiquetado rápido de filas"
+                labelPlaceholder="Etiqueta Base (ej. Platea 1..N, A1..A10).)"
+            />
         </div>
     );
 };

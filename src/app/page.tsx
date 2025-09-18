@@ -14,27 +14,29 @@ export default function Home() {
     handleToggleRow,
     handleToggleSeat,
     handleDragEnd,
-    // handleDragStart,
-    // isDragging
+    handleRotateSelected,
+    handleBatchLabeling
   } = useSeatMap();
 
   return (
     <div className={styles.mainContainer}>
-     <div className={styles.controlsPanel}>
-       <ControlsPanel
-         onCreateRows={handleCreateRows}
-         onDeleteRows={handleDeleteSelected}
-         onDeleteSeat={handleDeleteSeat}
+      <div className={styles.controlsPanel}>
+        <ControlsPanel
+          onBatchLabelingRows={handleBatchLabeling}
+          onCreateRows={handleCreateRows}
+          onDeleteRows={handleDeleteSelected}
+          onDeleteSeat={handleDeleteSeat}
+          onRotateRows={handleRotateSelected}
         />
-     </div>
+      </div>
       <div className={styles.seatMapWrapper}>
-        <h1>Seat Map Builder</h1> 
-          <SeatMapComponent
-           seatMap={seatMap}
-           onToggleRow={handleToggleRow}
-           onToggleSeat={handleToggleSeat}
-           handleDragEnd={handleDragEnd}
-          />
+        <h1>Seat Map Builder</h1>
+        <SeatMapComponent
+          seatMap={seatMap}
+          onToggleRow={handleToggleRow}
+          onToggleSeat={handleToggleSeat}
+          handleDragEnd={handleDragEnd}
+        />
       </div>
     </div>
   );

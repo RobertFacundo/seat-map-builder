@@ -1,10 +1,10 @@
 .formContainer {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 6px;
 }
 
-.formContainer h3 {
+.formContainer h2 {
   margin: 0;
   color: #555;
   font-size: 1.25rem;
@@ -13,12 +13,12 @@
 
 .inputGroup {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-direction: row;
+  justify-content: space-between; 
 }
 
 .input {
-  width: 100%;
+  width: calc(25% - 6px);
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -28,13 +28,13 @@
 
 .input:focus {
   outline: none;
-  border-color: #4299e1;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  border-color: #050709;
+  box-shadow: 0 0 0 3px rgba(5, 7, 8, 0.5);
 }
 
 .colorInput {
   height: 40px;
-  width: 100%;
+  width: 40px;
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -54,8 +54,9 @@
 }
 
 .createButton {
-  padding: 12px 20px;
-  background-color: #38a169;
+  padding: 10px 5px;
+  margin-top: 5px;
+   background-color: #1d9525;
   color: #fff;
   font-size: 1rem;
   font-weight: 500;
@@ -66,5 +67,5 @@
 }
 
 .createButton:hover {
-  background-color: #2f855a;
+  background-color: #167c1d;
 }

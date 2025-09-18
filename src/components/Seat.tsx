@@ -1,28 +1,25 @@
-import { Seat } from "@/types";
+import { Row, Seat } from "@/types";
 import styles from '@/styles/Seat.module.css'
 
 interface SeatProps {
     seat: Seat;
-    rowId: string;
     onToggleSeat: (rowId: string, seatId: string) => void;
-    rowColor: string;
-    rowSection: string;
-    rowLabel: string
+    row: Row;
 }
 
-const SeatComponent = ({ seat, rowId, onToggleSeat, rowColor, rowSection, rowLabel }: SeatProps) => {
+const SeatComponent = ({ seat, row, onToggleSeat}: SeatProps) => {
     const seatClass = seat.isSelected ? `${styles.seat} ${styles.selected}` : `${styles.seat} ${styles.notSelected}`;
-    const sectionDisplay = rowSection || '-';
-    const tooltipText = `Asiento: ${seat.label} | Fila: ${rowLabel} | Sección: ${sectionDisplay}`
+    const sectionDisplay = row.section || '-';
+    const tooltipText = `Asiento: ${seat.label} | Fila: ${row.label} | Sección: ${sectionDisplay}`
     return (
         <div
             onClick={(e) => {
                 e.stopPropagation();
-                onToggleSeat(rowId, seat.id)
+                onToggleSeat(row.id, seat.id)
             }}
             className={seatClass}
             title={tooltipText}
-            style={{ '--row-color': rowColor } as React.CSSProperties}>
+            style={{ '--row-color': row.color } as React.CSSProperties}>
         </div>
     );
 };
