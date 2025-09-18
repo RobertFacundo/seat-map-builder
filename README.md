@@ -30,3 +30,13 @@ El proyecto se desarrolló en varias fases, comenzando por la definición de la 
 - Para solucionar el conflicto entre el arrastre y los clics de selección, se optó por una estrategia de "handle de arrastre". Se creó un div específico (el "handle") dentro del RowComponent que contiene las propiedades del useDraggable (ref, listeners, attributes).
 
 - Este diseño permitió que el resto de la fila fuera clickeable para la selección, mientras que el arrastre solo se activa al interactuar con el "handle". Se implementó la lógica de e.stopPropagation() en los asientos para evitar que los clics en ellos se propaguen y activen la selección de la fila.
+  
+### 4- Implementación del Etiquetado Rápido de Filas (Batch Labeling):
+
+- Se añadió la funcionalidad de **etiquetado por lotes** para re-etiquetar múltiples filas seleccionadas con un patrón de numeración consistente.
+
+- Se creó una nueva función en el archivo de servicios (`services/mapServices.ts`), `batchLabelSelectedRows`, que itera sobre las filas seleccionadas y les asigna una nueva etiqueta y un nombre de sección basados en la entrada del usuario.
+
+- Para mantener la consistencia del mapa, la lógica se diseñó para que solo las filas seleccionadas se re-etiqueten. Las filas no seleccionadas conservan su numeración y propiedades originales, lo que previene re-indexaciones inesperadas.
+
+- Se refactorizaron los componentes (`ControlsPanel` y `SeatComponent`) para soportar esta funcionalidad. Se creó un formulario dedicado (`BatchLabelingForm`) para capturar la etiqueta base y el índice de inicio, y se aseguró de que el tooltip de los asientos reflejara con precisión la nueva etiqueta y sección de la fila.
