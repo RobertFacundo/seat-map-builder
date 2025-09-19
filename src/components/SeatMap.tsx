@@ -1,4 +1,5 @@
 import { SeatMap, Row, Seat } from "@/types";
+import Footer from "./Footer";
 import styles from '@/styles/SeatMap.module.css'
 import RowComponent from "./Row";
 import { DndContext, DragEndEvent } from "@dnd-kit/core";
@@ -22,6 +23,7 @@ const SeatMapComponent = ({ seatMap, onToggleRow, onToggleSeat, handleDragEnd}: 
                      onToggleSeat={onToggleSeat}
                  />
              ))}
+             <Footer/>
          </div>
        </DndContext>
     );
