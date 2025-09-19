@@ -204,9 +204,14 @@ Para documentar este proceso de manera transparente y detallada, se ha incluido 
 
 Este proyecto fue desarrollado bajo un plazo de tiempo limitado, priorizando un MVP funcional con una arquitectura limpia. Soy consciente de que hay áreas que se podrían mejorar para un entorno de producción. Las siguientes son posibles evoluciones para el proyecto:
 
+### Gestión de Estilos
+
+Por simplicidad y agilidad, se utilizaron módulos de CSS. Sin embargo, para un proyecto más grande, se podría refactorizar para usar una librería de estilos como Sass, Styled Components, o una librería de componentes como MUI, lo que permitiría una gestión más organizada y escalable de los estilos sin presentar una dificultad significativa.
+
 ### Gestión de Estado
 
 Para un proyecto de mayor escala, el prop drilling actual podría volverse complejo. Se podría refactorizar el estado para utilizar React Context API, lo que proporcionaría un acceso más directo al estado del mapa sin la necesidad de pasar props a través de múltiples niveles de componentes.
+
 
 ### Experiencia de Usuario (UX)
 
