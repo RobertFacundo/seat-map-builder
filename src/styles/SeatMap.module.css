@@ -1,5 +1,9 @@
 .seatMapWrapper {
   position: relative; 
   width: 100%;
-  height: 100%;
+   height: auto;
+   overflow: visible; 
+  background-color: #eca94c22;
+  border-radius: 15px;
+  margin-bottom: 5px;
 }

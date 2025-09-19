@@ -10,7 +10,7 @@ interface ControlsPanelProps {
     onDeleteRows: () => void;
     onDeleteSeat: () => void;
     onRotateRows: (rotation: number) => void;
-    onBatchLabelingRows: (baseLabel: string, start: number) => void;
+    onBatchLabelingRows: (baseLabel: string, start: number, newColor: string) => void;
     onNewMap: () => void;
 }
 
@@ -33,7 +33,7 @@ const ControlsPanel = ({
             <BatchLabelingForm
                 onSubmit={onBatchLabelingRows}
                 title="Etiquetado rápido de filas"
-                labelPlaceholder="Etiqueta Base (ej. Platea 1..N, A1..A10).)"
+                labelPlaceholder="Platea-VIP-Campo)"
             />
             <hr  className={styles.separator}/>
             <button onClick={onNewMap} className={`${buttonStyles['btn-base']} ${buttonStyles['btn-primary-grad']}`}>

@@ -18,4 +18,7 @@ export interface Row {
 
 export interface SeatMap {
     rows: Row[];
+    nextYPosition: number;
+    nextRowId: number;
+    nextSeatId: number;
 }

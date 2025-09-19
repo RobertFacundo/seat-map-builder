@@ -2,8 +2,9 @@
 
 import ControlsPanel from "@/components/ControlsPanel";
 import SeatMapComponent from "@/components/SeatMap";
+import Header from '@/components/Header'
 import { useSeatMap } from "@/hooks/useSeatMap";
-import styles from './page.module.css'
+import styles from './page.module.css';
 
 export default function Home() {
   const {
@@ -16,7 +17,9 @@ export default function Home() {
     handleDragEnd,
     handleRotateSelected,
     handleBatchLabeling,
-    handleNewMap
+    handleNewMap,
+    handleExport,
+    handleImport
   } = useSeatMap();
 
   return (
@@ -32,7 +35,7 @@ export default function Home() {
         />
       </div>
       <div className={styles.seatMapWrapper}>
-        <h1>Seat Map Builder</h1>
+        <Header onExport={handleExport} onImport={handleImport}/>
         <SeatMapComponent
           seatMap={seatMap}
           onToggleRow={handleToggleRow}

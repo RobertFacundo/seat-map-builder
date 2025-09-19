@@ -11,7 +11,7 @@
   flex-grow: 1; 
   padding: 20px;
   overflow: auto; 
-  background-color: #f0f0f0d7;
+  background-color: #ffffffef;
 }
 
 .controlsPanel{
@@ -25,5 +25,37 @@
   background-position: center;
   background-repeat: no-repeat;
   color: white; 
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 20px; 
+}
+
+@media (max-width: 1208px) {
+  .mainContainer {
+    flex-direction: column;
+    /* La altura se adapta a la de su contenido */
+    height: auto;
+    /* El único scroll de la página */
+    overflow-y: auto; 
+  }
+
+  .controlsPanel,
+  .seatMapWrapper {
+    width: 100%;
+    /* No hay altura fija, los componentes se apilan y ocupan lo que necesiten */
+    height: auto;
+    /* ¡Eliminamos el scroll interno! */
+    overflow-y: visible;
+    flex-grow: 0;
+  }
+}
+
+.seatMapWrapper h1 {
+  text-align: center;
+  color: var(--color-text-dark);
 }
 

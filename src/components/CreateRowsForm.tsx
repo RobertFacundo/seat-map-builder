@@ -31,7 +31,7 @@ const CreateRowsForm = ({ onCreateRows }: CreateRowsFormProps) => {
                     type="text"
                     value={section}
                     onChange={(e) => setSection(e.target.value)}
-                    placeholder="Platea"
+                    placeholder="Ej: Platea"
                     className={styles.input}
                 />
                 <input type="color"
