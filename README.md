@@ -49,3 +49,10 @@ Antes de implementar las funcionalidades de importación y exportación en forma
 - Gestión de fuentes: Integré una fuente de Google Fonts para unificar la tipografía de la aplicación.
 
 - Mejoras de UI: Agregué efectos de hover, colores de selección y un fondo cohesivo para una experiencia de usuario más atractiva.
+
+### 6- Implementación de Funcionalidades de Importación y Exportación JSON
+- Exportación de Mapas: Implementé una función de exportación que permite al usuario descargar el estado actual del mapa de asientos como un archivo .json. Antes de la descarga, se solicita un nombre para el archivo, lo que facilita la gestión y organización de los mapas.
+
+- Importación de Mapas: Desarrollé una función de importación que permite al usuario cargar un archivo .json de su sistema. Esta función incluye una validación robusta del esquema de datos para asegurar que el archivo importado sea compatible con la aplicación, previniendo errores de renderizado. Si el archivo es válido, reemplaza el estado actual del mapa, permitiendo la reanudación de una sesión de trabajo guardada previamente.
+
+- Manejo del Estado Consistente: Para asegurar la correcta serialización y deserialización de los datos, unifiqué todas las variables de estado del mapa (rows, nextYPosition, nextRowId, nextSeatId) en un solo objeto. 
