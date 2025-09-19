@@ -7,7 +7,7 @@ Desarrollé este proyecto en varias fases, empezando por la definición de la es
 
 - Planifiqué los pasos iniciales y la arquitectura del proyecto, decidiendo cómo iba a implementar las distintas funcionalidades.
 
--Creé los tipos de datos (types/index.ts) y las interfaces para la estructura del mapa de asientos, incluyendo Seat y Row. A la interfaz Row le añadí las propiedades x e y para gestionar la posición de cada fila.
+- Creé los tipos de datos (types/index.ts) y las interfaces para la estructura del mapa de asientos, incluyendo Seat y Row. A la interfaz Row le añadí las propiedades x e y para gestionar la posición de cada fila.
 
 - Implementé las funciones principales en el archivo de servicios (services/mapServices.ts), lo que me permitió manejar la lógica de negocio de la aplicación: createNewRows, deleteSelectedRows, toggleRowSelection, toggleSeatSelection y deleteSeat.
 
