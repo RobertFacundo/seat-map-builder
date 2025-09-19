@@ -35,7 +35,7 @@ export default function Home() {
         />
       </div>
       <div className={styles.seatMapWrapper}>
-        <Header onExport={handleExport} onImport={handleImport}/>
+        <Header onExport={handleExport} onImport={handleImport} />
         <SeatMapComponent
           seatMap={seatMap}
           onToggleRow={handleToggleRow}

@@ -35,22 +35,23 @@
 }
 
 @media (max-width: 1208px) {
-  .mainContainer {
+    .mainContainer {
     flex-direction: column;
-    /* La altura se adapta a la de su contenido */
     height: auto;
-    /* El único scroll de la página */
     overflow-y: auto; 
   }
 
-  .controlsPanel,
+  .controlsPanel {
+    width: 100%;
+    height: auto;
+    overflow-y: visible;
+  }
+
   .seatMapWrapper {
     width: 100%;
-    /* No hay altura fija, los componentes se apilan y ocupan lo que necesiten */
     height: auto;
-    /* ¡Eliminamos el scroll interno! */
+    min-height: 100vh; 
     overflow-y: visible;
-    flex-grow: 0;
   }
 }
 

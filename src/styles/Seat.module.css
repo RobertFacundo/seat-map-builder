@@ -25,3 +25,10 @@
     border: 1px solid var(--row-color, #999);
     background-color: var(--row-color, #f0f0f0);
 }
+
+@media (max-width: 1208px) {
+  .seat{
+    width: 13px;
+    height: 13px;
+  }
+}
