@@ -214,6 +214,8 @@ Se podrían implementar mejoras significativas en la interfaz para una mayor flu
 
 - La posibilidad de agregar bloques de texto y formas geométricas al mapa para una mayor personalización.
 - 
+- También se podría diseñar un panel de control diferente y optimizado para dispositivos móviles, para mejorar la usabilidad en pantallas pequeñas.
+  
 ### Escalabilidad y Rendimiento
 
 En un escenario de producción con miles de filas y asientos, el rendimiento podría optimizarse mediante la virtualización de listas (por ejemplo, con react-window o react-virtualized). Esto asegura que el navegador solo renderice los elementos visibles en pantalla, mejorando la fluidez y el rendimiento general de la aplicación.
