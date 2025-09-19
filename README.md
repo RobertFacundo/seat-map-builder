@@ -60,7 +60,7 @@ Antes de implementar las funcionalidades de importación y exportación en forma
 ## 2. Gestión del Proyecto y Cronograma
 Este proyecto fue completado en un plazo de **72 horas**, con una dedicación total de **17 horas y 5 minutos**. El trabajo se organizó en bloques de tiempo a lo largo de varios días para gestionar la carga de manera eficiente.
 
-*Tengo total disponibilidad para distribuir los bloques de trabajo en cualquier franja horaria para gestionar la carga de manera eficiente.*
+*Tengo total disponibilidad (24/7) para distribuir los bloques de trabajo en cualquier franja horaria para gestionar la carga de manera eficiente.*
 
 ### Distribución de Tareas por Día
 
@@ -173,7 +173,9 @@ export interface SeatMap {
 
 ### Arquitectura del Estado y Lógica
 
-Una de las decisiones principales fue la separación de responsabilidades entre la lógica de negocio y la interfaz de usuario. . Para lograrlo:
+Una de las decisiones principales fue la separación de responsabilidades entre la lógica de negocio y la interfaz de usuario.
+
+Para lograrlo:
 
 - Uso de Hooks Personalizados: Toda la lógica del mapa (gestión del estado, funciones de manipulación y cálculo) se extrajo en el useSeatMap hook. Esto permite que los componentes de la UI (como SeatMapComponent y ControlsPanel) sean puros y solo se centren en renderizar la interfaz y manejar eventos de usuario. Este enfoque promueve la reutilización de la lógica y hace que el código sea más legible y fácil de mantener.
 
@@ -188,7 +190,7 @@ Para cumplir con el cronograma, se hicieron los siguientes supuestos que podría
 - Experiencia de Usuario: La rotación de filas se implementó a través de un campo de entrada numérico. En una versión futura, esto podría mejorarse con un control de rotación más visual e intuitivo, como un "handle" de rotación interactivo directamente en el componente de la fila, lo que ofrecería una experiencia de usuario más fluida.
 ## 5. Registro de Colaboración con IA
 
-La Inteligencia Artificial (IA) fue una herramienta fundamental en el desarrollo de este proyecto, sirviendo como un compañero de programación en lugar de un simple generador de código. Se utilizó para:
+La Inteligencia Artificial (Geminis) fue una herramienta fundamental en el desarrollo de este proyecto, sirviendo como un compañero de programación en lugar de un simple generador de código. Se utilizó para:
 
 - Validación y Corroboración: Corroborar la lógica y las decisiones de arquitectura que definí, desde la estructura de los tipos de datos hasta la separación de componentes en la interfaz de usuario.
 
@@ -215,7 +217,7 @@ Se podrían implementar mejoras significativas en la interfaz para una mayor flu
 - Una funcionalidad de deshacer y rehacer para revertir cambios accidentales.
 
 - La posibilidad de agregar bloques de texto y formas geométricas al mapa para una mayor personalización.
-- 
+
 - También se podría diseñar un panel de control diferente y optimizado para dispositivos móviles, para mejorar la usabilidad en pantallas pequeñas.
   
 ### Escalabilidad y Rendimiento
@@ -241,6 +243,8 @@ Se podría implementar la persistencia de datos automática usando localStorage 
 ### 7. Agradecimientos
 
 Estoy realmente contento con la oportunidad de participar en esta prueba. No solo ha sido entretenido trabajar en este proyecto, sino que me ha permitido aprender e implementar soluciones que nunca había hecho antes. 
+
+Muchas Gracias!
 
 --
 
