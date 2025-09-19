@@ -60,6 +60,8 @@ Antes de implementar las funcionalidades de importación y exportación en forma
 ## 2. Gestión del Proyecto y Cronograma
 Este proyecto fue completado en un plazo de **72 horas**, con una dedicación total de **17 horas y 5 minutos**. El trabajo se organizó en bloques de tiempo a lo largo de varios días para gestionar la carga de manera eficiente.
 
+*Tengo total disponibilidad para distribuir los bloques de trabajo en cualquier franja horaria para gestionar la carga de manera eficiente.*
+
 ### Distribución de Tareas por Día
 
 * **17 de Septiembre**
