@@ -163,6 +163,7 @@ export const useSeatMap = () => {
                 }
             }catch(error){
                 alert('Error al leer el archivo. Asegúrate de que es un JSON válido.');
+                console.log(error)
             }
         };
 

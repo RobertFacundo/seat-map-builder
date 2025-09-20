@@ -1,4 +1,4 @@
-import { SeatMap, Row, Seat } from "@/types";
+import { SeatMap} from "@/types";
 import Footer from "./Footer";
 import styles from '@/styles/SeatMap.module.css'
 import RowComponent from "./Row";

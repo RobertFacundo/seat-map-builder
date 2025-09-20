@@ -1,4 +1,4 @@
-import { Row, Seat } from '@/types';
+import { Row} from '@/types';
 import SeatComponent from './Seat';
 import styles from '@/styles/Row.module.css';
 import { useDraggable } from '@dnd-kit/core';

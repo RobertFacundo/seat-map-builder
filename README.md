@@ -1,5 +1,9 @@
 # Prueba Tecnica- Seat Map Builder
 
+**¡El proyecto está en vivo!** 
+
+Puedes ver una demostración interactiva aquí: [https://seat-map-builder.vercel.app](https://seat-map-builder.vercel.app)
+
 ## 1. Evolución Cronológica del Proyecto
 Desarrollé este proyecto en varias fases, empezando por la definición de la estructura y la lógica, para luego pasar a la construcción de los componentes y la implementación de las funcionalidades clave.
 
